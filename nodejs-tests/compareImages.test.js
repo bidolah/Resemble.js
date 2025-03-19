@@ -34,7 +34,7 @@ describe("compareImages", () => {
 
     test("throws when failed", async () => {
         const promise = compareImages(fs.readFileSync("./demoassets/People.jpg"), "bogus data");
-        await expect(promise).rejects.toMatch("Failed to load image 'bogus data'. Error: ENOENT, No such file or directory 'bogus data'");
+        await expect(promise).rejects.toMatch("Failed to load image 'bogus data'. Error: No such file or directory");
     });
 
     test("throws when invalid image format", async () => {
